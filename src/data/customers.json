@@ -1,0 +1,22 @@
+[
+  {
+    "firstName": "Ajit",
+    "lastName": "Singh",
+    "email": "ajit.singh@gmail.com",
+    "phone": "1234567890",
+    "address": "123 Main Street",
+    "city": "New York",
+    "state": "NY",
+    "zipCode": "10001"
+  },
+  {
+    "firstName": "Rahul",
+    "lastName": "Yadav",
+    "email": "rahul.yadav@gmail.com",
+    "phone": "9087654321",
+    "address": "123 Market Street",
+    "city": "Chicago",
+    "state": "IL",
+    "zipCode": "60601"
+  }
+]
