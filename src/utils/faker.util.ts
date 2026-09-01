@@ -24,6 +24,14 @@ export class FakerUtil {
     return faker.string.alphanumeric(10);
   }
 
+  static generateAccountNumber(): string {
+    return faker.string.numeric(10);
+  }
+
+  static generateLastSSN(): string {
+    return faker.string.numeric(4);
+  }
+
   static generateTransactionDescription(): string {
     return faker.commerce.productName();
   }

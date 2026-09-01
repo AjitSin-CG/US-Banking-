@@ -13,6 +13,13 @@ export class LoginPage {
   readonly signInButton: Locator;
   readonly errorMessage: Locator;
   readonly loginButton: Locator;
+  readonly forgotPasswordLink: Locator;
+  readonly submitButton: Locator;
+  readonly enrollmentLink: Locator;
+  readonly enrollContinueButton: Locator;
+  readonly cardOrAccountNumberInput: Locator;
+  readonly ssnInput: Locator;
+
 
   constructor(page: Page) {
     this.page = page;
@@ -25,11 +32,24 @@ export class LoginPage {
       name: /sign in|login/i
     });
 
+    this.forgotPasswordLink = page.getByTestId('usb-link-usb-link-loginHelp').first();
+
+    this.submitButton=page.locator('#submit-button');
+    this.enrollContinueButton=page.locator('#generic-continue-primary');
+
+
     this.errorMessage = page.getByRole('alert');
 
     this.loginButton = page.getByRole('button', {
         name: /log in with password/i
     });
+
+    this.enrollmentLink=page.locator("#enrollmentLink");
+
+    this.cardOrAccountNumberInput= page.locator('#input_cardoraccno');
+    this.ssnInput= page.locator('#input_ssn');
+
+
 
 
   }
