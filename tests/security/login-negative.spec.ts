@@ -142,5 +142,38 @@ test.describe('Negative Login Tests', () => {
 
 
 
+test('Show validation when Enroll in online banking options with Invalid and wrong Account Number and SSN', async ({ loginPage, homePage }) => {
+    
+    // Click on Login Button
+    await homePage.header.signInButton.click()
+
+    // Enter the Enroll in online banking 
+    await loginPage.enrollmentLink.click();
+
+    // Used Facker to generate a random Account Number
+    const accountNumber = FakerUtil.generateAccountNumber();
+
+    // Enter the Account Number
+    await loginPage.cardOrAccountNumberInput.fill(accountNumber);
+
+    // Used Facker to generate a random Account Number
+    const ssn = FakerUtil.generateLastSSN();
+    console.log("Generated SSN: ", ssn);
+
+    // Enter the SSN 
+    await loginPage.cardOrAccountNumberInput.fill(ssn);
+
+    // Click on Login Submit Button
+    await loginPage.enrollContinueButton.click();
+
+    // Verify validation message is displayed
+    const passwordError = loginPage.page.locator('#error-text_cardoraccno');
+    await expect(passwordError).toBeVisible();
+})
+
+
+
+
+
 
 });
